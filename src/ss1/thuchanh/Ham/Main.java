@@ -1,4 +1,4 @@
-package ss1.thuchanh;
+package ss1.thuchanh.Ham;
 
 public class Main {
     public static void main(String[] args) {

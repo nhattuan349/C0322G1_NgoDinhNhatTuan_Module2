@@ -1,4 +1,4 @@
-package ss1.baitap;
+package ss1.baitap.UngDungDocSoThanhChu;
 
 import java.util.Scanner;
 

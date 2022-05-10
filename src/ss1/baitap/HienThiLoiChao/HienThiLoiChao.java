@@ -1,4 +1,4 @@
-package ss1.baitap;
+package ss1.baitap.HienThiLoiChao;
 
 import java.util.Scanner;
 

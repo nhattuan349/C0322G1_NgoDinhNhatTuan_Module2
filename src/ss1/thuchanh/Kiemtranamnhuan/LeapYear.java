@@ -1,8 +1,8 @@
-package ss1.thuchanh;
+package ss1.thuchanh.Kiemtranamnhuan;
 
 import java.util.Scanner;
 
-public class Kiemtranamnhuan {
+public class LeapYear {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int year;

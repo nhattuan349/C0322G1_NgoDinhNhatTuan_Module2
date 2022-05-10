@@ -1,4 +1,4 @@
-package ss1.thuchanh;
+package ss1.thuchanh.SystemTime;
 
 import java.util.Date;
 

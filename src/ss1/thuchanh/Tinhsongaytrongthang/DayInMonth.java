@@ -1,8 +1,8 @@
-package ss1.thuchanh;
+package ss1.thuchanh.Tinhsongaytrongthang;
 
 import java.util.Scanner;
 
-public class Tinhsongaytrongthang {
+public class DayInMonth {
     public static void main(String[] args) {
         Scanner myScanner = new Scanner(System.in);
         System.out.println("Bạn muốn đếm số ngày trong tháng nào?");

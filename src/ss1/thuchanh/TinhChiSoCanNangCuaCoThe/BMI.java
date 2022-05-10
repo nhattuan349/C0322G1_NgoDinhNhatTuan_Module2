@@ -1,8 +1,8 @@
-package ss1.thuchanh;
+package ss1.thuchanh.TinhChiSoCanNangCuaCoThe;
 
 import java.util.Scanner;
 
-public class TinhChiSoCanNangCuaCoThe {
+public class BMI {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);

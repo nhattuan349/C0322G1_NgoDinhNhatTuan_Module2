@@ -1,8 +1,8 @@
-package ss1.thuchanh;
+package ss1.thuchanh.Giaiphuongtrinhbacnhat;
 
 import java.util.Scanner;
 
-public class Giaiphuongtrinhbacnhat {
+public class LinearEquationResolver {
 
     public static void main(String[] args) {
         System.out.println("Giải phương trình bậc 1");
