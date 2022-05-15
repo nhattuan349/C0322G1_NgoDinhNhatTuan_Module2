@@ -27,10 +27,10 @@ public class QuadraticeQuationClassRun {
         this.c = c;
     }
 
-    public QuadraticeQuationClassRun() {
+    public QuadraticeQuationClassRun() {// constructor không có tham số
     }
 
-    public QuadraticeQuationClassRun(double a, double b, double c) {
+    public QuadraticeQuationClassRun(double a, double b, double c) { // constructor có tham số
         this.a = a;
         this.b = b;
         this.c = c;
@@ -38,11 +38,11 @@ public class QuadraticeQuationClassRun {
 
     public double getDiscriminant() {
         return this.b * this.b - 4 * this.a * this.c;
-    }
+    }// Tính Denta = bxb-4ac
 
     public double getRoot1() {
         return (-this.b + Math.pow(this.getDiscriminant(), 0.5)) / (2 * this.a);
-    }
+    } //Nghiệm thứ nhất -b+căn bặc hai(
 
     public double getRoot2() {
         return (-this.b - Math.pow(this.getDiscriminant(), 0.5)) / (2 * this.a);

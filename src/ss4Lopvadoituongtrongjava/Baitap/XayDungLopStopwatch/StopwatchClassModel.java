@@ -1,44 +1,54 @@
 package ss4Lopvadoituongtrongjava.Baitap.XayDungLopStopwatch;
 
 public class StopwatchClassModel {
-    public static void main(String[] args) {
-        StopwatchClassRun stopWatch = new StopwatchClassRun(200,300);
-        System.out.println(stopWatch);
-
-        System.out.println("Bắt đầu đếm thời gian.");
-        stopWatch.start();
-
-        int[] arr = new int[100000];
-        for (int i = 0; i < arr.length; i++) {
-            arr[i] = i;
-        }
-
-        System.out.print("Mảng ban đầu: ");
-        for (int item : arr) {
-            System.out.print(item + " ");
-        }
-
-        for (int i = 0; i < arr.length - 1; i++) {
-            int maxIdx = i;
-            for (int j = i + 1; j < arr.length; j++) {
-                if (arr[j] > arr[i]) {
-                    maxIdx = j;
+    public static long[] sort(long... a) {
+        for (int i = 0; i < a.length; i++) {
+            for (int j = i + 1; j < a.length; j++) {
+                if (a[j] < a[i]) {
+                    long temp = a[i];
+                    a[i] = a[j];
+                    a[j] = temp;
                 }
-                int temp = arr[maxIdx];
-                arr[maxIdx] = arr[i];
-                arr[i] = temp;
             }
         }
+        return a;
+    }
+    public static void main(String[] args) {
+        long[] a = new long[100000];
+        StopwatchClassRun sw = new StopwatchClassRun();
 
-        System.out.print("\nMảng sau khi sắp xếp: ");
-        for (int item : arr) {
-            System.out.print(item + " ");
+        for (int i = 0; i < 100000; i++) {
+            a[i] = (int) (Math.random() * 100000);
         }
-
-        System.out.print("\nKết thúc đếm thời gian.");
-        stopWatch.stop();
-
-        long timeRun = stopWatch.getElapsedTime();
-        System.out.print("\nThời gian chạy: " + timeRun + " milliseconds.");
+        sw.start();
+        sort(a);
+        sw.stop();
+        System.out.println("Thoi gian de sap xep cho  100.000 so la   :" + sw.getElapsedTime() + " miligiay");
     }
 }
+//public class StopwatchClassModel {// tao mang
+//    public static long [] sort(long... a) {// long ...a : chưa biết bao nhiêu giá trị trong đay có thể chứa được nhiều giá trị
+//        for (int i = 0; i < a.length; i++) {// sắp xếp theo thứ tự tang dần
+//            for (int j = i + 1; j < a.length; j++) {
+//                if (a[j] < a[i]) {
+//                    long temp = a[i];
+//                    a[i] = a[j];
+//                    a[j] = temp;
+//                }
+//            }
+//        }return a;// trả về mnagr sau khi sắp xếp
+//    }
+//    public static void main(String[] args) {
+//        long[] a = new long[100000];// Khai báo khởi tạo mảng có 1000000 giá trị
+//        StopwatchClassRun sw = new StopwatchClassRun();
+//
+//        for (int i = 0; i < 100000; i++) {// Điền 1000000 giá trị vào mảng
+//            a[i] = (int) (Math.random() * 100000);// math ramdom tra ve tun 0 tiem can 1// Điều ngầu nhiên 1000000 số nguyên
+//        }
+//        sw.start();// thời gian bắt đầu
+//        sort(a);// xử lý =thời gian kết thức - thời gian bắt đầu
+//        sw.stop();//thời gian kết thúc
+//        System.out.println("Thoi gian de sap xep cho  100.000 so la   :" + sw.getElapsedTime() + " miligiay");
+//
+//    }
+//}
