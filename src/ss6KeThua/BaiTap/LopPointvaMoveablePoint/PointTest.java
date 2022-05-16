@@ -1,4 +1,4 @@
-package ss6KeThua.LopPointvaMoveablePoint;
+package ss6KeThua.BaiTap.LopPointvaMoveablePoint;
 
 public class PointTest {
     public static void main(String[] args) {

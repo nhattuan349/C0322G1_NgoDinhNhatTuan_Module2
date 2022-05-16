@@ -1,4 +1,4 @@
-package ss6KeThua.LopPointvaMoveablePoint;
+package ss6KeThua.BaiTap.LopPointvaMoveablePoint;
 
 public class MoveablePoint extends Point{
     private float xSpeed = 0.0f;
