@@ -2,64 +2,81 @@ package ss8CleanCodeAndRefactoring.BaiTap.Refactoring;
 
 public class TennisGame {
 
-    public static String getScore(String player1Name, String player2Name, int score1, int score2) {
-        String score = "";
-        int tempScore=0;
-       // if (score1==score2) sai
-        if (score1==score2)
-        {
-            switch (score1)
-            {
+    public static final String LOVE = "Love";
+    public static final String FIFTEEN = "Fifteen";
+    public static final String THIRTY = "Thirty";
+    public static final String FORTY = "Forty";
+    public static final String DEUCE = "Deuce";
+    public static final String ALL = "-All";
+
+    public static String getScore(String player1Name, String player2Name, int player1Score, int player2Score) {
+        boolean isDeuce = player1Score == player2Score;
+        boolean isFinish = player1Score >= 4 || player2Score >= 4;
+        String scorePlayer = "";
+        if (isDeuce) {
+            scorePlayer += getDeuceScore(player1Score);
+        } else if (isFinish) {
+            scorePlayer += getFinishScore(player1Score, player2Score);
+        } else {
+            scorePlayer += setScore(player1Score, player2Score);
+        }
+        return scorePlayer;
+    }
+
+    public static String getDeuceScore(int deuceScore) {
+        switch (deuceScore) {
+            case 0:
+                return LOVE + ALL;
+            case 1:
+                return FIFTEEN + ALL;
+            case 2:
+                return THIRTY + ALL;
+            case 3:
+                return FORTY + ALL;
+            default:
+                return DEUCE;
+        }
+    }
+
+    public static String getFinishScore(int player1Score, int player2Score) {
+        int minusResult = player1Score - player2Score;
+        if (minusResult == 1) {
+            return "Advantage player1";
+        } else if (minusResult == -1) {
+            return "Advantage player2";
+        } else if (minusResult >= 2) {
+            return "Win for player1";
+        } else {
+            return "Win for player2";
+        }
+    }
+
+    public static String setScore(int player1Score, int player2Score) {
+        int tempScore = 0;
+        String s = "";
+        for (int i = 1; i < 3; i++) {
+            if (i == 1) {
+                tempScore = player1Score;
+            } else {
+                s += "-";
+                tempScore = player2Score;
+            }
+
+            switch (tempScore) {
                 case 0:
-                    score = "Love-All";
+                    s += LOVE;
                     break;
                 case 1:
-                    score = "Fifteen-All";
+                    s += FIFTEEN;
                     break;
                 case 2:
-                    score = "Thirty-All";
+                    s += THIRTY;
                     break;
                 case 3:
-                    score = "Forty-All";
+                    s += FORTY;
                     break;
-                default:
-                    score = "Deuce";
-                    break;
-
             }
         }
-      //  else if (score1>=4 || score2>=4) sai
-        else if (score1>=4 || score2>=4)
-        {
-            int minusResult = score1-score2;
-            if (minusResult==1) score ="Advantage player1";
-            else if (minusResult ==-1) score ="Advantage player2";
-            else if (minusResult>=2) score = "Win for player1";
-            else score ="Win for player2";
-        }
-        else
-        {
-            for (int i=1; i<3; i++)
-            {
-                if (i==1) tempScore = score1;
-                else { score+="-"; tempScore = score2;}
-                switch(tempScore)
-                {
-                    case 0:
-                        score+="Love";
-                        break;
-                    case 1:
-                        score+="Fifteen";
-                        break;
-                    case 2:
-                        score+="Thirty";
-                        break;
-                    case 3:
-                        score+="Forty";
-                        break;
-                }
-            }
-        }
-        return score;
+        return s;
     }
 }
