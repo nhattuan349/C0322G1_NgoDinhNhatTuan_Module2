@@ -33,8 +33,8 @@ public class Genders implements Comparable<Genders> {
 
     public static void main(String[] args) {
         List<Genders> person = new ArrayList<>();
-        person.add(new Genders("HUU DUC", false, 1997));
-        person.add(new Genders("PHUONG THUY", true, 2000));
+        person.add(new Genders("NGO DINH", false, 1997));
+        person.add(new Genders("NHAT TUAN", true, 2000));
         Queue<Genders> queueGirl = new LinkedList<>();
         Queue<Genders> queueBoy = new LinkedList<>();
 
