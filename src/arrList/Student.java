@@ -1,4 +1,4 @@
-package PersonList;
+package arrList;
 
 public class Student extends Person {
     private float point;

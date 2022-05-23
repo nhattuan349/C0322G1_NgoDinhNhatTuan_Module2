@@ -2,12 +2,12 @@ package ss11StackQueue.BaiTap.ToChucDuLieuHopLyDemergingSuDungQueue;
 
 import java.util.*;
 
-public class Genders implements Comparable<Genders> {
+public class Genders {
     private String name;
-    private final boolean gender;
+    private String gender;
     private final Integer born;
 
-    public Genders(String name, boolean gender, Integer born) {
+    public Genders(String name, String gender, Integer born) {
         this.name = name;
         this.gender = gender;
         this.born = born;
@@ -23,7 +23,7 @@ public class Genders implements Comparable<Genders> {
         this.name = name;
     }
 
-    public boolean isGender() {
+    public String getGender() {
         return gender;
     }
 
@@ -33,41 +33,24 @@ public class Genders implements Comparable<Genders> {
 
     public static void main(String[] args) {
         List<Genders> person = new ArrayList<>();
-        person.add(new Genders("NGO DINH", false, 1997));
-        person.add(new Genders("NHAT TUAN", true, 2000));
+        person.add(new Genders("NHAT TUAN", "Nam", 1995));
+        person.add(new Genders("THU NGAN", "Nữ", 2000));
         Queue<Genders> queueGirl = new LinkedList<>();
         Queue<Genders> queueBoy = new LinkedList<>();
 
-        Collections.sort(person);
-        for (Genders iem : person) {
-            System.out.println(iem);
-        }
         for (Genders genders : person) {
-            if (!genders.isGender()) {
-                queueGirl.add(genders);
-            } else {
+            if (genders.getGender().contains("Nam")) {
                 queueBoy.add(genders);
+            } else {
+                queueGirl.add(genders);
             }
         }
-        System.out.println("------------------");
-        while (!queueGirl.isEmpty()) {
-            System.out.println(queueGirl.poll());
-        }
-        while (!queueBoy.isEmpty()) {
-            System.out.println(queueBoy.poll());
-        }
+        System.out.println("Nhóm nữ: " + queueGirl.poll());
+        System.out.println("Nhóm nam: " + queueBoy.poll());
     }
-
     @Override
     public String toString() {
-        return "Demerging{" +
-                "name='" + name + '\'' +
-                ", gender=" + gender +
-                ", born=" + born +
-                '}';
-    }
-    @Override
-    public int compareTo(Genders o) {
-        return this.getBorn().compareTo(o.getBorn());
+        return "Tên là: " + name + " Giới tính: " + gender + " Năm sinh: " + born;
     }
 }
+

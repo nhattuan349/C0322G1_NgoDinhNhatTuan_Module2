@@ -12,6 +12,9 @@ public class Palindrome {
         Queue<Character> queue = new LinkedList<>();
         Stack<Character> stack = new Stack<>();
         char[] arr = chart.toCharArray();
+        //So sánh từng phần tử của stack và queue,
+        // nếu giống nhau từng cặp thì đó là chuỗi Palindrome,
+        // ngược lại thì chuỗi trên không phải là chuỗi Palindrome.
         for (int i = 0; i < arr.length; i++) {
             stack.add(arr[i]);
             queue.add(arr[i]);

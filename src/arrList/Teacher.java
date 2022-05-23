@@ -1,4 +1,4 @@
-package PersonList;
+package arrList;
 
 public class Teacher extends Person {
     private int salary;

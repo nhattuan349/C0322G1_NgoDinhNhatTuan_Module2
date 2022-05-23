@@ -1,4 +1,4 @@
-package PersonList;
+package arrList;
 
 import java.util.Scanner;
 

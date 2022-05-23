@@ -1,4 +1,4 @@
-package PersonList;
+package arrList;
 
 public abstract class Person {
     private String name;

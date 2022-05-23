@@ -91,4 +91,3 @@ public class DisplayGeometry { //tao class
         }// kết thúc switch case
     }//kết thúc hàm main
 }//kết thúc hàm class
-
