@@ -152,11 +152,122 @@ public class PersonLinkedList implements ServiceAll {
 
     @Override
     public void update() {
-
+        System.out.println("Danh sách Nhân viên muốn sửa: \n" +
+                "1.Nhân viên quản lý \n" +
+                "2.Nhân viên công nhật \n" +
+                "3.Nhân viên sản xuất \n" +
+                "4.Thoát");
+        System.out.println("Chọn kiểu nhân viên muốn sửa: ");
+        int num = Integer.parseInt(scanner.nextLine());
+        switch (num) {
+            case 1:
+                System.out.print("Nhập tên Nhân viên Quản lý muốn sửa: ");
+                String name = scanner.nextLine();
+                for (int i = 0; i < linkedlist.size(); i++) {
+                    if (linkedlist.get(i) instanceof NhanVienQuanLy && linkedlist.get(i).getFullName().equals(name)) {
+                        System.out.print("Nhập tên: ");
+                        String nameql = scanner.nextLine();
+                        System.out.print("Nhập Ngày sinh: ");
+                        String ngaySinh = scanner.nextLine();
+                        System.out.print("Nhập Địa chỉ: ");
+                        String diaChi = scanner.nextLine();
+                        System.out.print("Luong Co Ban: ");
+                        double luongCoBan = Double.parseDouble(scanner.nextLine());
+                        System.out.print("He So Luong: ");
+                        double heSoLuong = Double.parseDouble(scanner.nextLine());
+                        linkedlist.get(i).setFullName(nameql);
+                        linkedlist.get(i).setNgaySinh(ngaySinh);
+                        linkedlist.get(i).setDiaChi(diaChi);
+                        ((NhanVienQuanLy) linkedlist.get(i)).setLuongCoBan(luongCoBan);
+                        ((NhanVienQuanLy) linkedlist.get(i)).setHeSoLuong(luongCoBan);
+                        System.out.println("cập nhật thành công");
+                    }
+                }
+                break;
+            case 2:
+                System.out.print("Nhập tên Nhân viên Công nhật muốn sửa: ");
+                String name2 = scanner.nextLine();
+                for (int i = 0; i < linkedlist.size(); i++) {
+                    if (linkedlist.get(i) instanceof NhanVienCongNhat && linkedlist.get(i).getFullName().equals(name2)) {
+                        System.out.print("Nhập tên: ");
+                        String namecnh = scanner.nextLine();
+                        System.out.print("Nhập Ngày sinh: ");
+                        String ngaySinh = scanner.nextLine();
+                        System.out.print("Nhập Địa chỉ: ");
+                        String diaChi = scanner.nextLine();
+                        System.out.print("So Ngày công: ");
+                        double soNgayCong = Double.parseDouble(scanner.nextLine());
+                        linkedlist.get(i).setFullName(namecnh);
+                        linkedlist.get(i).setNgaySinh(ngaySinh);
+                        linkedlist.get(i).setDiaChi(diaChi);
+                        ((NhanVienCongNhat) linkedlist.get(i)).setSoNgayCong(soNgayCong);
+                        System.out.println("cập nhật thành công");
+                    }
+                }
+                break;
+            case 3:
+                System.out.print("Nhập tên Nhân viên Sản xuất muốn sửa: ");
+                String name3= scanner.nextLine();
+                for (int i = 0; i < linkedlist.size(); i++) {
+                    if (linkedlist.get(i) instanceof NhanVienSanXuat && linkedlist.get(i).getFullName().equals(name3)) {
+                        System.out.print("Nhập tên: ");
+                        String namesx = scanner.nextLine();
+                        System.out.print("Nhập Ngày sinh: ");
+                        String ngaySinh = scanner.nextLine();
+                        System.out.print("Nhập Địa chỉ: ");
+                        String diaChi = scanner.nextLine();
+                        System.out.print("So San Pham: ");
+                        int soSanPham = Integer.parseInt(scanner.nextLine());
+                        linkedlist.get(i).setFullName(namesx);
+                        linkedlist.get(i).setNgaySinh(ngaySinh);
+                        linkedlist.get(i).setDiaChi(diaChi);
+                        ((NhanVienSanXuat) linkedlist.get(i)).setSoSanPham(soSanPham);
+                        System.out.println("cập nhật thành công");
+                    }
+                }
+                break;
+            case 4:
+                break;
+        }
     }
 
     @Override
     public void delete() {
-
+        System.out.println("Danh sách Nhân viên muốn xoá: \n" +
+                "1.Nhân viên quản lý \n" +
+                "2.Nhân viên công nhật \n" +
+                "3.Nhân viên sản xuất \n" +
+                "4.Thoát");
+        System.out.println("Chọn kiểu nhân viên muốn xoá: ");
+        int num = Integer.parseInt(scanner.nextLine());
+        switch (num) {
+            case 1:
+                System.out.print("Nhập tên Nhân viên Quản lý muốn xoá: ");
+                String name = scanner.nextLine();
+                for (int i = 0; i < linkedlist.size(); i++) {
+                    if (linkedlist.get(i) instanceof NhanVienQuanLy && linkedlist.get(i).getFullName().equals(name)) {
+                        linkedlist.remove(linkedlist.get(i));
+                    }
+                }
+                break;
+            case 2:
+                System.out.print("Nhập tên Nhân viên công nhật muốn xoá: ");
+                String name1 = scanner.nextLine();
+                for (int i = 0; i < linkedlist.size(); i++) {
+                    if (linkedlist.get(i) instanceof NhanVienCongNhat && linkedlist.get(i).getFullName().equals(name1)) {
+                        linkedlist.remove(linkedlist.get(i));
+                    }
+                }
+                break;
+            case 3:
+                System.out.print("Nhập tên Nhân viên Sản xuất muốn xoá: ");
+                String name2 = scanner.nextLine();
+                for (int i = 0; i < linkedlist.size(); i++) {
+                    if (linkedlist.get(i) instanceof NhanVienSanXuat && linkedlist.get(i).getFullName().equals(name2)) {
+                        linkedlist.remove(linkedlist.get(i));
+                    }
+                }
+                break;
+        }
     }
 }

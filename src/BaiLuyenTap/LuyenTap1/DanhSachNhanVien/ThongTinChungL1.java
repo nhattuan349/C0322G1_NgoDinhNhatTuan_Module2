@@ -39,6 +39,7 @@ public abstract class ThongTinChungL1 {
     }
 
     public abstract double getTongLuong();
+
     @Override
     public String toString() {
         return "ThongTinChungL1{" +

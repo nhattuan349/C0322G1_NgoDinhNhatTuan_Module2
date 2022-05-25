@@ -34,10 +34,10 @@ public class NhanVienCongNhatLt1 extends ThongTinChungL1 {
 
     @Override
     public String toString() {
-        return "Họ tên: " + getHoTen() +
-                "Ngày sinh: " + getNgaySinh() +
-                "Địa chỉ: " + getNgaySinh() +
-                "SoNgayCong: " + soNgayCong+
-                "Tổng lương là: "+ getTongLuong();
+        return  " Họ tên Công Nhật: " + getHoTen() +
+                " Ngày sinh: " + getNgaySinh() +
+                " Địa chỉ: " + getNgaySinh() +
+                " SoNgayCong: " + soNgayCong +
+                " Tổng lương là: " + getTongLuong();
     }
 }

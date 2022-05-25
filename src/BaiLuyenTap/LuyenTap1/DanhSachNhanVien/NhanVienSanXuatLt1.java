@@ -20,12 +20,20 @@ public class NhanVienSanXuatLt1 extends ThongTinChungL1 {
         this.soSanPham = soSanPham;
     }
 
+    public int getSoSanPham() {
+        return soSanPham;
+    }
+
+    public void setSoSanPham(int soSanPham) {
+        this.soSanPham = soSanPham;
+    }
+
     @Override
     public String toString() {
-        return " Họ tên:" + getHoTen() +
-                "Ngày sinh: " + getNgaySinh() +
-                "Địa chỉ: " + getNgaySinh() +
-                "soSanPham=" + soSanPham +
-                "Tổng lương là: "+ getTongLuong();
+        return  " Họ tên Sản Xuất:" + getHoTen() +
+                " Ngày sinh: " + getNgaySinh() +
+                " Địa chỉ: " + getNgaySinh() +
+                " Số Sản Phẩm:" + soSanPham +
+                " Tổng lương là: "+ getTongLuong();
     }
 }

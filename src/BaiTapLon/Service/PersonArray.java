@@ -150,8 +150,85 @@ public class PersonArray implements ServiceAll {
 
     @Override
     public void update() {
-
+        System.out.println("Danh sách Nhân viên muốn sửa: \n" +
+                "1.Nhân viên quản lý \n" +
+                "2.Nhân viên công nhật \n" +
+                "3.Nhân viên sản xuất \n" +
+                "4.Thoát");
+        System.out.println("Chọn kiểu nhân viên muốn sửa: ");
+        int num = Integer.parseInt(scanner.nextLine());
+        switch (num) {
+            case 1:
+                System.out.print("Nhập tên Nhân viên Quản lý muốn sửa: ");
+                String name = scanner.nextLine();
+                for (int i = 0; i < array.length; i++) {
+                    if (array[i] instanceof NhanVienQuanLy && array[i].getFullName().equals(name)) {
+                            System.out.print("Nhập tên: ");
+                            String nameql = scanner.nextLine();
+                            System.out.print("Nhập Ngày sinh: ");
+                            String ngaySinh = scanner.nextLine();
+                            System.out.print("Nhập Địa chỉ: ");
+                            String diaChi = scanner.nextLine();
+                            System.out.print("Luong Co Ban: ");
+                            double luongCoBan = Double.parseDouble(scanner.nextLine());
+                            System.out.print("He So Luong: ");
+                            double heSoLuong = Double.parseDouble(scanner.nextLine());
+                            array[i].setFullName(nameql);
+                            array[i].setNgaySinh(ngaySinh);
+                            array[i].setDiaChi(diaChi);
+                            ((NhanVienQuanLy) array[i]).setLuongCoBan(luongCoBan);
+                            ((NhanVienQuanLy) array[i]).setHeSoLuong(luongCoBan);
+                        System.out.println("cập nhật thành công");
+                    }
+                }
+                break;
+            case 2:
+                System.out.print("Nhập tên Nhân viên Công nhật muốn sửa: ");
+                String name2 = scanner.nextLine();
+                for (int i = 0; i < array.length; i++) {
+                    if (array[i] instanceof NhanVienCongNhat && array[i].getFullName().equals(name2)) {
+                        System.out.print("Nhập tên: ");
+                        String namecnh = scanner.nextLine();
+                        System.out.print("Nhập Ngày sinh: ");
+                        String ngaySinh = scanner.nextLine();
+                        System.out.print("Nhập Địa chỉ: ");
+                        String diaChi = scanner.nextLine();
+                        System.out.print("So Ngày công: ");
+                        double soNgayCong = Double.parseDouble(scanner.nextLine());
+                        array[i].setFullName(namecnh);
+                        array[i].setNgaySinh(ngaySinh);
+                        array[i].setDiaChi(diaChi);
+                        ((NhanVienCongNhat) array[i]).setSoNgayCong(soNgayCong);
+                        System.out.println("cập nhật thành công");
+                    }
+                }
+                break;
+            case 3:
+                System.out.print("Nhập tên Nhân viên Sản xuất muốn sửa: ");
+                String name3= scanner.nextLine();
+                for (int i = 0; i < array.length; i++) {
+                    if (array[i] instanceof NhanVienSanXuat && array[i].getFullName().equals(name3)) {
+                        System.out.print("Nhập tên: ");
+                        String namesx = scanner.nextLine();
+                        System.out.print("Nhập Ngày sinh: ");
+                        String ngaySinh = scanner.nextLine();
+                        System.out.print("Nhập Địa chỉ: ");
+                        String diaChi = scanner.nextLine();
+                        System.out.print("So San Pham: ");
+                        int soSanPham = Integer.parseInt(scanner.nextLine());
+                        array[i].setFullName(namesx);
+                        array[i].setNgaySinh(ngaySinh);
+                        array[i].setDiaChi(diaChi);
+                        ((NhanVienSanXuat) array[i]).setSoSanPham(soSanPham);
+                        System.out.println("cập nhật thành công");
+                    }
+                }
+                break;
+            case 4:
+                break;
+        }
     }
+
 
     @Override
     public void delete() {

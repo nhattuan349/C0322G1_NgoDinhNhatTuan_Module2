@@ -28,11 +28,14 @@ public class PersonController {
                     "5. Sap xep luong nhan vien\n" +
                     "6. them moi array\n" +
                     "7. xoa array\n" +
-                    "8. them moi arraylist\n" +
-                    "9. xoa arraylist\n" +
-                    "10. them moi linkedlist\n" +
-                    "11. ket thuc"
-            );
+                    "8. update array\n" +
+                    "9. them moi arraylist\n" +
+                    "10. xoa arraylist\n" +
+                    "11. update arraylist\n" +
+                    "12. them moi linkedlist\n" +
+                    "13. xoa linkedlist\n" +
+                    "14. update linkedlist\n" +
+                    "15. ket thuc");
             System.out.println("nhap chuc nang muon chon");
             int input = Integer.parseInt(scanner.nextLine());
             switch (input) {
@@ -61,15 +64,27 @@ public class PersonController {
                     personArray.delete();
                     break;
                 case 8:
-                    personArrayList.add();
+                    personArray.update();
                     break;
                 case 9:
-                    personArrayList.delete();
+                    personArrayList.add();
                     break;
                 case 10:
-                    personLinkedList.add();
+                    personArrayList.delete();
                     break;
                 case 11:
+                    personArrayList.update();
+                    break;
+                case 12:
+                    personLinkedList.add();
+                    break;
+                case 13:
+                    personLinkedList.delete();
+                    break;
+                case 14:
+                    personLinkedList.update();
+                    break;
+                case 15:
                     System.out.println("ket thuc chuong trinh");
                     System.exit(0);
                 default:
