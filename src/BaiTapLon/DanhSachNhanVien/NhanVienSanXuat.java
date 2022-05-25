@@ -1,6 +1,6 @@
 package BaiTapLon.DanhSachNhanVien;
 
-public class NhanVienSanXuat extends Person{
+public class NhanVienSanXuat extends Person {
     private int soSanPham;
 
     public NhanVienSanXuat() {

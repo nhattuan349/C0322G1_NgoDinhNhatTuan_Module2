@@ -7,7 +7,6 @@ import BaiTapLon.DanhSachNhanVien.Person;
 
 import java.util.LinkedHashMap;
 import java.util.Map;
-import java.util.Scanner;
 
 public class PersonMap implements ServiceAll {
 
@@ -24,5 +23,20 @@ public class PersonMap implements ServiceAll {
         for (Integer item : map.keySet()) {
             System.out.println(map.get(item));
         }
+    }
+
+    @Override
+    public void add() {
+
+    }
+
+    @Override
+    public void update() {
+
+    }
+
+    @Override
+    public void delete() {
+
     }
 }

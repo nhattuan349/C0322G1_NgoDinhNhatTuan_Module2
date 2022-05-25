@@ -77,4 +77,86 @@ public class PersonLinkedList implements ServiceAll {
             }
         } while (true);
     }
+
+    @Override
+    public void add() {
+
+        System.out.println("Chọn kiểu Nhân viên muốn thêm\n" +
+                "1.Nhân viên quan lý \n" +
+                "2.Nhân viên công nhật \n" +
+                "3.Nhân viên sản xuất \n" +
+                "4.Thoát");
+
+        int num = Integer.parseInt(scanner.nextLine());
+        switch (num) {
+            case 1:
+                for (Person list : linkedlist) {
+                    if (list instanceof NhanVienQuanLy) {
+                        System.out.print("Nhập tên: ");
+                        String name = scanner.nextLine();
+                        System.out.print("Nhập Ngày sinh: ");
+                        String ngaySinh = scanner.nextLine();
+                        System.out.print("Nhập Địa chỉ: ");
+                        String diaChi = scanner.nextLine();
+                        System.out.print("Luong Co Ban: ");
+                        double luongCoBan = Double.parseDouble(scanner.nextLine());
+                        System.out.print("He So Luong: ");
+                        double heSoLuong = Double.parseDouble(scanner.nextLine());
+                        Person person =new NhanVienQuanLy(name,ngaySinh,diaChi,luongCoBan,heSoLuong) ;
+                        linkedlist.add(person);
+                        System.out.println("Thêm mới Nhan vien quan ly thành công...");
+                        break;
+                    }
+                }
+                break;
+            case 2:
+                for (Person list : linkedlist) {
+                    if (list instanceof NhanVienSanXuat) {
+                        System.out.print("Nhập tên: ");
+                        String name = scanner.nextLine();
+                        System.out.print("Nhập Ngày sinh: ");
+                        String ngaySinh = scanner.nextLine();
+                        System.out.print("Nhập Địa chỉ: ");
+                        String diaChi = scanner.nextLine();
+                        System.out.print("So San Pham: ");
+                        int soSanPham = Integer.parseInt(scanner.nextLine());
+                        Person person =new NhanVienSanXuat(name,ngaySinh,diaChi,soSanPham) ;
+                        linkedlist.add(person);
+                        System.out.println("Thêm mới Nhan vien thành công...");
+                        break;
+                    }
+                }
+                break;
+            case 3:
+                for (Person list : linkedlist) {
+                    if (list instanceof NhanVienCongNhat) {
+                        System.out.print("Nhập tên: ");
+                        String name = scanner.nextLine();
+                        System.out.print("Nhập Ngày sinh: ");
+                        String ngaySinh = scanner.nextLine();
+                        System.out.print("Nhập Địa chỉ: ");
+                        String diaChi = scanner.nextLine();
+                        System.out.print("So Ngay Cong: ");
+                        double soNgayCong = Double.parseDouble(scanner.nextLine());
+                        Person person =new NhanVienCongNhat(name,ngaySinh,diaChi,soNgayCong) ;
+                        linkedlist.add(person);
+                        System.out.println("Thêm mới Nhan vien thành công...");
+                        break;
+                    }
+                }
+                break;
+            case 4:
+                break;
+        }
+    }
+
+    @Override
+    public void update() {
+
+    }
+
+    @Override
+    public void delete() {
+
+    }
 }
