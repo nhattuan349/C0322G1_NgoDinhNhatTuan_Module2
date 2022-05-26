@@ -17,7 +17,7 @@ public class CountStudentPass {
         array = new int[size];
         int i = 0;
         while (i < array.length) {
-            System.out.print("Enter a mark for student " + (i + 1) + ": ");
+            System.out.print("Enter a mark for student.csv " + (i + 1) + ": ");
             array[i] = Integer.parseInt(scanner.nextLine());
             i++;
         }
