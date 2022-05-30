@@ -1,4 +1,4 @@
-package ss18String_Regex.ThucHanh.Validate_email;
+package ss19String_Regex.ThucHanh.Validate_email;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;

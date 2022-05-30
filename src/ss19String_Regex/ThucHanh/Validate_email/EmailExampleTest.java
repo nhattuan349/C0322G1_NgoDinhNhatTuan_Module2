@@ -1,6 +1,4 @@
-package ss18String_Regex.ThucHanh.Validate_email;
-
-import ss18String_Regex.ThucHanh.Validate_email.EmailExample;
+package ss19String_Regex.ThucHanh.Validate_email;
 
 public class EmailExampleTest {
     private static EmailExample emailExample;
