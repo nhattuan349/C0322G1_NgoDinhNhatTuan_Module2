@@ -14,7 +14,7 @@ public class TestRegexNumberPhone {
             boolean check = Pattern.matches(phoneNumberRegex, str);
             if (check) {
                 System.out.println("sdt: " + str + " -->Khớp");
-            } else System.out.println("sdt: " + str + "Không khớpKhớp");
+            } else System.out.println("sdt: " + str + "Không khớp");
         } while (true);
     }
 }
