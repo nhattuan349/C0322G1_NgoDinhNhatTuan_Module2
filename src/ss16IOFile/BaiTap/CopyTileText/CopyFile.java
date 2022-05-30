@@ -3,15 +3,16 @@ package ss16IOFile.BaiTap.CopyTileText;
 import java.io.*;
 
 public class CopyFile {
-
-    public static void readAndCopyFile(String data1, String data2) {
-        File fileData1 = new File(data1);
-        File fileData2 = new File(data2);
-        try (FileReader fileReader = new FileReader(fileData1);
+    public static void readAndCopyFile(String source, String target) {
+        File fileSource = new File(source);
+        File fileTarget = new File(target);
+        try (FileReader fileReader = new FileReader(fileSource);
              BufferedReader bufferedReader = new BufferedReader(fileReader);
-             FileWriter fileWriter = new FileWriter(fileData1);
+
+             FileWriter fileWriter = new FileWriter(fileTarget);
              BufferedWriter bufferedWriter = new BufferedWriter(fileWriter)) {
-            if (!fileData1.exists() && !fileData2.exists()) {
+
+            if (!fileSource.exists() && !fileTarget.exists()) {
                 throw new FileNotFoundException();
             }
             String line;
@@ -32,9 +33,9 @@ public class CopyFile {
     }
 
     public static void main(String[] args) {
-        String data1 = "J:\\CG\\CodegymX\\module2\\src\\ss16IOFile\\BaiTap\\CopyTileText\\data1";
-        String data2 = "J:\\CG\\CodegymX\\module2\\src\\ss16IOFile\\BaiTap\\CopyTileText\\data2";
-        readAndCopyFile(data1, data2);
+        String source = "J:\\CG\\CodegymX\\module2\\src\\ss16IOFile\\BaiTap\\CopyTileText\\source.txt";
+        String target = "J:\\CG\\CodegymX\\module2\\src\\ss16IOFile\\BaiTap\\CopyTileText\\target.txt";
+        readAndCopyFile(source, target);
         System.out.println("Sao chép thành công....");
     }
 }

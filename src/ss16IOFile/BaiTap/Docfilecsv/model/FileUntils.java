@@ -4,7 +4,7 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class fileUntils {
+public class FileUntils {
 
     public static void writeFile(String pathFile, String line) {
 

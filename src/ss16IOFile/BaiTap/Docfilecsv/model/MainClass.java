@@ -2,7 +2,6 @@ package ss16IOFile.BaiTap.Docfilecsv.model;
 
 
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class MainClass {
@@ -26,7 +25,7 @@ public class MainClass {
 //            fileUntils.writeFile(FILE_NAME,line);
 //        }
         //input file
-        List<String> listLine = fileUntils.readFile(FILE_NAME);
+        List<String> listLine = FileUntils.readFile(FILE_NAME);
         System.out.println(listLine);
 
         String[] lineSplit = listLine.get(0).split(COMMA) ;
