@@ -1,21 +1,20 @@
 package ss19String_Regex.BaiTap.ValidateTenCuaLopHoc;
 
+import java.util.Scanner;
 import java.util.regex.Pattern;
 
 public class TestRegexNameOfClass {
     public static void main(String[] args) {
-        String phoneNumberRegex = "^(.)[0-9]{2}-(0)[0-9]{9}$";
+        String testClassName = "^(C|P|A)[0-9]{4}(G|H|I|K|L|M)[0-9]{1}$";
+        Scanner scanner = new Scanner(System.in);
+        do {
+            System.out.println("Nhập Tên của lớp học --- Ví dụ: C0322G1");
+            String className1 = scanner.nextLine();
 
-        String str = "+84-0899607659";
-        boolean check1 = Pattern.matches(phoneNumberRegex, str);
-        if (check1) {
-            System.out.println("Sđt: " + str + " --Hợp lệ");
-        } else System.out.println("Sđt: " + str + " --Không hợp lệ");
-
-        String str1 = "+84-95355535";
-        boolean check2 = Pattern.matches(phoneNumberRegex, str1);
-        if (check2) {
-            System.out.println("Sđt: " + str1 + " --Hợp lệ");
-        } else System.out.println("Sđt: " + str1 + " --Không hợp lệ");
+            boolean check1 = Pattern.matches(testClassName, className1);
+            if (check1) {
+                System.out.println("className :" + className1 + "" + " --> Khớp");
+            } else System.out.println("className :" + className1 + "" + " --không khớp");
+        }while (true);
     }
 }
