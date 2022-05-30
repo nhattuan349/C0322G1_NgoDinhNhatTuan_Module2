@@ -9,12 +9,12 @@ public class TestRegexNameOfClass {
         Scanner scanner = new Scanner(System.in);
         do {
             System.out.println("Nhập Tên của lớp học --- Ví dụ: C0322G1");
-            String className1 = scanner.nextLine();
+            String className = scanner.nextLine();
 
-            boolean check1 = Pattern.matches(testClassName, className1);
-            if (check1) {
-                System.out.println("className :" + className1 + "" + " --> Khớp");
-            } else System.out.println("className :" + className1 + "" + " --không khớp");
+            boolean check = Pattern.matches(testClassName, className);
+            if (check) {
+                System.out.println("className :" + className + "" + " --> Khớp");
+            } else System.out.println("className :" + className + "" + " --không khớp, mời nhập lại");
         }while (true);
     }
 }
