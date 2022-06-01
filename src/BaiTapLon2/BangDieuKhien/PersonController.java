@@ -1,4 +1,4 @@
-package BaiTapLon.BangDieuKhien;
+package BaiTapLon2.BangDieuKhien;
 
 import BaiTapLon.Service.PersonArray;
 import BaiTapLon.Service.PersonArrayList;
