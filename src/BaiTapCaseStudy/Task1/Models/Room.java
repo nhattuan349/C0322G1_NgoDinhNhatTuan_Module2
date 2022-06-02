@@ -6,6 +6,17 @@ public class Room extends Facility{
     public Room() {
     }
 
+    @Override
+    public String cover() {
+        return String.format("%s,%s,%s,%s,%s,%s",
+                super.getServiceName(),
+                super.getUsableArea(),
+                super.getRentalCosts(),
+                super.getPeopleMaximum(),
+                super.getRentalType(),
+                serviceFree);
+    }
+
     public Room(String serviceFree) {
         this.serviceFree = serviceFree;
     }

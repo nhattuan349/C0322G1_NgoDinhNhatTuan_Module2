@@ -1,6 +1,6 @@
 package BaiTapCaseStudy.Task1.Models;
 
-public class Person {
+public abstract class Person {
     private int code;
     private String name;
     private String dateOfBirth;

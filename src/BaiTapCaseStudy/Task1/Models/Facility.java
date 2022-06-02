@@ -1,6 +1,6 @@
 package BaiTapCaseStudy.Task1.Models;
 
-public class Facility { //Các loại dịch vụ
+public abstract class Facility { //Các loại dịch vụ
     private String serviceName;//Tên dịch vụ
     private double usableArea;//Diện tích sử dụng
     private double rentalCosts;//Chi phí thuê
@@ -57,6 +57,8 @@ public class Facility { //Các loại dịch vụ
     public void setRentalType(String rentalType) {
         this.rentalType = rentalType;
     }
+
+    public abstract String cover();
 
     @Override
     public String toString() {

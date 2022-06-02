@@ -7,6 +7,18 @@ public class House extends Facility{
     public House() {
     }
 
+    @Override
+    public String cover() {
+        return String.format("%s,%s,%s,%s,%s,%s,%s",
+                super.getServiceName(),
+                super.getUsableArea(),
+                super.getRentalCosts(),
+                super.getPeopleMaximum(),
+                super.getRentalType(),
+                getRomStandard(),
+                getNumberFloors());
+    }
+
     public House(String romStandard, double numberFloors) {
         this.romStandard = romStandard;
         this.numberFloors = numberFloors;

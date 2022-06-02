@@ -1,6 +1,8 @@
-package BaiTapCaseStudy.Task1.Services;
+package BaiTapCaseStudy.Task1.Services.Impl;
 
 import BaiTapCaseStudy.Task1.Models.Customers;
+import BaiTapCaseStudy.Task1.Services.Service;
+import BaiTapCaseStudy.Task1.Untils.CustomerGuestType;
 import BaiTapCaseStudy.Task1.Untils.ReadAndWriteFileTask1;
 import CaseStudy.Models.Cutomers;
 import CaseStudy.Untils.ReadAndWriteFile2;
@@ -30,7 +32,7 @@ public class CustomersIpmt implements Service {
             String address = item[8];
 
             Customers customers = new Customers(code, name, dateOfBirth, gender,
-                    id, phoneNumber, email, typeGuest, address);
+                    id, phoneNumber, email,typeGuest , address);
             customersList.add(customers);
         }
         for (Customers item : customersList) {
@@ -131,8 +133,8 @@ public class CustomersIpmt implements Service {
                     System.out.println("Nhap email");
                     String email1 = scanner.nextLine();
 
-                    System.out.println("Nhap typeGuest");
-                    String typeGuest1 = scanner.nextLine();
+
+                    String typeGuest1 = CustomerGuestType.typeGuest();
 
                     System.out.println("Nhap address");
                     String address1 = scanner.nextLine();

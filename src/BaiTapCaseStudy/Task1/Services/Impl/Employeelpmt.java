@@ -1,6 +1,8 @@
-package BaiTapCaseStudy.Task1.Services;
+package BaiTapCaseStudy.Task1.Services.Impl;
 
 import BaiTapCaseStudy.Task1.Models.Employee;
+import BaiTapCaseStudy.Task1.Services.Service;
+import BaiTapCaseStudy.Task1.Untils.EmployeeLevelAndLocation;
 import BaiTapCaseStudy.Task1.Untils.ReadAndWriteFileTask1;
 import CaseStudy.Untils.ReadAndWriteFile2;
 
@@ -30,7 +32,7 @@ public class Employeelpmt implements Service {
             double salary = Double.parseDouble(item[9]);
 
             Employee employee = new Employee(code, name, dateOfBirth, gender,
-                    id, phoneNumber, email, level, address, salary);
+                    id, phoneNumber, email,level, address, salary);
             employeeList.add(employee);
         }
         for (Employee item : employeeList) {
@@ -152,11 +154,9 @@ public class Employeelpmt implements Service {
                     System.out.println("Nhap email");
                     String email1 = scanner.nextLine();
 
-                    System.out.println("Nhap level");
-                    String level1 = scanner.nextLine();
+                    String level1 = EmployeeLevelAndLocation.level();
 
-                    System.out.println("Nhap address");
-                    String address1 = scanner.nextLine();
+                    String address1 = EmployeeLevelAndLocation.address();
 
                     System.out.println("Nhap salary");
                     double salary1 = Double.parseDouble(scanner.nextLine());
