@@ -11,6 +11,7 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Employeelpmt implements Service {
+    // viết hoa chũ path vì có final
     final String path = "J:\\CG\\CodegymX\\module2\\src\\BaiTapCaseStudy\\Task1\\DaTa\\Employee.csv";
     private Scanner scanner = new Scanner(System.in);
 

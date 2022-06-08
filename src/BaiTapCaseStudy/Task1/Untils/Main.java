@@ -1,6 +1,8 @@
 package BaiTapCaseStudy.Task1.Untils;
 
+
 import BaiTapCaseStudy.Task1.Services.Impl.Employeelpmt;
+import BaiTapCaseStudy.Task1.Services.Impl.FacilityIpmt;
 import CaseStudy.Services.CustomerIpml;
 
 
@@ -31,6 +33,7 @@ public class Main {
                     System.out.println("Customer Management");
                     break;
                 case "3":
+                    FacilityManagement();
                     System.out.println("Facility Management");
                     break;
                 case "4":
@@ -118,6 +121,41 @@ public class Main {
                     System.err.println("Nhap sai, nhap lai");
             }
         } while (true);
+    }
+
+    public static void FacilityManagement() {
+        FacilityIpmt facilityIpmt = new FacilityIpmt();
+        do {
+            System.out.println("1. Display list facility\n" +
+                    "2. Add new facility\n" +
+                    "3.Display list facility maintenance\n" +
+                    "4. Return main menu\n");
+            System.out.println("Moi ban nhap chuc nang");
+            String input = scanner.nextLine();
+            switch (input) {
+                case "1":
+                    System.out.println("Display list facility");
+                    facilityIpmt.display();
+                    FacilityManagement();
+                    break;
+                case "2":
+                    System.out.println("Add new facility");
+                    facilityIpmt.add();
+                    FacilityManagement();
+                    break;
+                case "3":
+                    System.out.println("Display list facility maintenance");
+                    facilityIpmt.display();
+                    FacilityManagement();
+                    break;
+                case "4":
+                    System.out.println("Add new facility");
+                    facilityIpmt.display();
+                    return;
+                default:
+                    System.out.println("Nhap sai, Nhap lai 1--4 ");
+            }
+        }while (true);
     }
 }
 
